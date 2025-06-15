@@ -27,3 +27,11 @@ output "eks_cluster_security_group_id" {
   description = "Security group ID of the EKS cluster primary network interface"
   value       = module.eks.eks_cluster_security_group_id
 }
+
+output "ecr_repository_url" {
+  value = module.ecr.repository_url
+}
+
+output "ecr_registry_id" {
+  value = module.ecr.registry_id
+}
