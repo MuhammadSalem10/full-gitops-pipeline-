@@ -8,11 +8,11 @@ resource "aws_ecr_repository" "main_ecr" {
 }
 
 
-resource "aws_ecr_repository" "example" {
+resource "aws_ecr_repository" "app_policy" {
   name = "example-repo"
 }
 
-resource "aws_ecr_lifecycle_policy" "example" {
+resource "aws_ecr_lifecycle_policy" "app_policy" {
   repository = aws_ecr_repository.main_ecr.name
 
   policy = <<EOF
@@ -36,6 +36,3 @@ resource "aws_ecr_lifecycle_policy" "example" {
 EOF
 }
 
-variable "repository_name" {
-  type = string
-}
